@@ -41,3 +41,7 @@ For information on how to use these files to create and deploy through AzureML c
 
 Other repo
 https://github.com/sfoteini/custom-vision-azure-functions/tree/main
+https://github.com/hnky/AI4DEV01-CustomVision
+https://github.com/elbruno/CustomVisionAndAzureFunctions
+https://microsoftlearning.github.io/AI-102-AIEngineer/Instructions/17-image-classification.html
+https://github.com/MicrosoftLearning/AI-102-AIEngineer

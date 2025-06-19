@@ -1,0 +1,23 @@
+@baseUrl = http://localhost:8082
+@imageName = IMG_20200229_164759.jpg
+
+### Test 1: Basic image endpoint with multipart/form-data
+POST {{baseUrl}}/image
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary
+
+------WebKitFormBoundary
+Content-Disposition: form-data; name="imageData"; filename="{{imageName}}"
+Content-Type: image/jpeg
+
+< ./{{imageName}}
+------WebKitFormBoundary--
+
+### Test 2: Image endpoint with octet-stream (raw binary)
+POST {{baseUrl}}/image
+Content-Type: application/octet-stream
+
+< ./{{imageName}}
+
+
+### Test 7: Check if server is running
+GET {{baseUrl}}/

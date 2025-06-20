@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#!/bin/bash
-
 # Load environment variables if .env file exists
 set -o allexport
 if [ -f .env ]; then

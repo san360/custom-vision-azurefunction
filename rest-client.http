@@ -1,6 +1,11 @@
 @baseUrl = http://localhost:8082
 @imageName = IMG_20200229_164759.jpg
 
+# Custom Vision configuration from environment
+@customVisionUrl = {{$dotenv CUSTOM_VISION_PREDICTION_URL}}
+@customVisionKey = {{$dotenv CUSTOM_VISION_PREDICTION_KEY}}
+
+
 ### Test 1: Basic image endpoint with multipart/form-data
 POST {{baseUrl}}/image
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundary
@@ -21,3 +26,31 @@ Content-Type: application/octet-stream
 
 ### Test 7: Check if server is running
 GET {{baseUrl}}/
+
+### Custom Vision Prediction API - Classify Image by URL
+POST {{customVisionUrl}}
+Prediction-Key: {{customVisionKey}}
+Content-Type: application/json
+
+{
+  "Url": "https://raw.githubusercontent.com/microsoftlearning/mslearn-ai-vision/main/Labfiles/image-classification/test-images/IMG_TEST_1.jpg"
+}
+
+### Custom Vision Prediction API - Test with a real fruit image URL
+POST {{customVisionUrl}}
+Prediction-Key: {{customVisionKey}}
+Content-Type: application/json
+
+{
+  "Url": "https://raw.githubusercontent.com/microsoftlearning/mslearn-ai-vision/main/Labfiles/image-classification/test-images/IMG_TEST_2.jpg"
+}
+
+
+### Custom Vision Prediction API - Classify Image by URL
+POST {{customVisionUrl}}
+Prediction-Key: {{customVisionKey}}
+Content-Type: application/json
+
+{
+  "Url": "https://raw.githubusercontent.com/microsoftlearning/mslearn-ai-vision/main/Labfiles/image-classification/test-images/IMG_TEST_1.jpg"
+}
